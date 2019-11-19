@@ -45,22 +45,71 @@ public class CuentaBancaria {
 	}
 	
 	public void comprobarDigitosCtrl() {//terminar  public para prueba
-		String banco=codigoCuenta.substring(0, 3);
-		String oficina=codigoCuenta.substring(4, 7);
+		String banco=codigoCuenta.substring(0, 8);
 		String ctrlDigit=codigoCuenta.substring(8, 9);
-		String numeroCuenta=codigoCuenta.substring(10, 19);
+		String numeroCuenta=codigoCuenta.substring(10, codigoCuenta.length());
+		int ctrlCuenta=0;
+		int ctrlBanco=0;
+		int resultado=0;
 		
-		System.out.println(codigoCuenta.substring(10, codigoCuenta.length()));
-		System.out.println(codigoCuenta.substring(8, 10));
-		System.out.println(codigoCuenta.substring(4, 8));
-		System.out.println(codigoCuenta.substring(0, 4));
+//		System.out.println(banco);
+//		System.out.println(ctrlDigit);
+//		System.out.println(numeroCuenta);
+		
+		
+				resultado+= (Integer.parseInt(banco.substring(0, 1))*4);
+				
+				resultado+= (Integer.parseInt(banco.substring(1, 2))*8);
+				
+				resultado+= (Integer.parseInt(banco.substring(2, 3))*5);
+				
+				resultado+= (Integer.parseInt(banco.substring(3, 4))*10);
+				
+				resultado+= (Integer.parseInt(banco.substring(4, 5))*9);
+				
+				resultado+= (Integer.parseInt(banco.substring(5, 6))*7);
+				
+				resultado+= (Integer.parseInt(banco.substring(6, 7))*3);
+				
+				resultado+= (Integer.parseInt(banco.substring(7, 8))*6);
+			
+		ctrlBanco=11-(resultado%11);
+		
+		////hacer comprobacion en caso de ser 11 o 10
+		
+		resultado=0;
+		
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(0, 1))*1);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(1, 2))*2);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(2, 3))*4);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(3, 4))*8);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(4, 5))*5);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(5, 6))*10);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(6, 7))*9);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(7, 8))*7);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(8, 9))*3);
+		
+			resultado+= (Integer.parseInt(numeroCuenta.substring(9, numeroCuenta.length()))*6);
+		
+		ctrlCuenta=11-(resultado%11);	
 		
 		
 		
+		
+		System.out.println(ctrlBanco);
+		System.out.println(ctrlCuenta);
+		
+		////
 	}
-	
-	
-	
 	
 	
 	
