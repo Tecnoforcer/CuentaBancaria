@@ -1,11 +1,13 @@
 package aplicacion;
 
+import java.util.Scanner;
+
 public class Menu {
 	public Menu() {}
 	
 	public int menuPrincipal() {
 		int opc=0;
-		
+		Scanner leer=new Scanner(System.in);
 		do {
 			System.out.println("1.- Ver numero de cuenta");
 			System.out.println("2.- Ver titular");
@@ -18,9 +20,9 @@ public class Menu {
 			System.out.println("9.- Consultar saldo");
 			System.out.println("10.- Salir");
 
+			opc=leer.nextInt();
 			
-			
-		} while (opc<11 && opc>0);
+		} while (opc<0 && opc>10);
 
 		return opc;
 	}
