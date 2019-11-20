@@ -3,9 +3,9 @@ package aplicacion;
 import java.util.Scanner;
 
 public class Menu {
-	public Menu() {}
 	
-	public int menuPrincipal() {
+	
+	public static int menuPrincipal() {
 		int opc=0;
 		Scanner leer=new Scanner(System.in);
 		do {
